@@ -7,6 +7,12 @@
 
 import Foundation
 
+// MARK: - ExpenseAddResponse
+struct ExpenseAddResponse: Codable {
+    let message: String
+    let data: ExpenseElement
+}
+
 // MARK: - ExpenseElement
 struct ExpenseElement: Codable {
     let id: Int

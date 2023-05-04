@@ -25,6 +25,8 @@
 		B7A6D79729D692E0006EDCAE /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B7A6D79629D692E0006EDCAE /* Preview Assets.xcassets */; };
 		B7A6D79F29D69841006EDCAE /* AddExpenseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7A6D79E29D69841006EDCAE /* AddExpenseView.swift */; };
 		B7B3B1D729D7DC7D0066A6F0 /* AddExpenseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7B3B1D629D7DC7D0066A6F0 /* AddExpenseViewModel.swift */; };
+		B7FBA38229F8E45A004FF994 /* Dictionary+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7FBA38129F8E45A004FF994 /* Dictionary+Extension.swift */; };
+		B7FBA38429F8E6B8004FF994 /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7FBA38329F8E6B8004FF994 /* Date+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +48,8 @@
 		B7A6D79629D692E0006EDCAE /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		B7A6D79E29D69841006EDCAE /* AddExpenseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddExpenseView.swift; sourceTree = "<group>"; };
 		B7B3B1D629D7DC7D0066A6F0 /* AddExpenseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddExpenseViewModel.swift; sourceTree = "<group>"; };
+		B7FBA38129F8E45A004FF994 /* Dictionary+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Dictionary+Extension.swift"; sourceTree = "<group>"; };
+		B7FBA38329F8E6B8004FF994 /* Date+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +95,8 @@
 			children = (
 				B720A14429D9A82E00B1E88E /* String+Extension.swift */,
 				B78391F929E26BA1007D9410 /* UIScreen+Extension.swift */,
+				B7FBA38129F8E45A004FF994 /* Dictionary+Extension.swift */,
+				B7FBA38329F8E6B8004FF994 /* Date+Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -235,11 +241,13 @@
 				B720A14229D9A60E00B1E88E /* Expense.swift in Sources */,
 				B7B3B1D729D7DC7D0066A6F0 /* AddExpenseViewModel.swift in Sources */,
 				B7485F0829D89A9F00453720 /* EditExpenseView.swift in Sources */,
+				B7FBA38229F8E45A004FF994 /* Dictionary+Extension.swift in Sources */,
 				B720A14729D9AC4600B1E88E /* Tags.swift in Sources */,
 				B7485F0A29D89BE800453720 /* TagsListView.swift in Sources */,
 				B720A13829D9A26900B1E88E /* Httpclient.swift in Sources */,
 				B7A6D79F29D69841006EDCAE /* AddExpenseView.swift in Sources */,
 				B7485F0629D88C5B00453720 /* ExpenseListView.swift in Sources */,
+				B7FBA38429F8E6B8004FF994 /* Date+Extension.swift in Sources */,
 				B7A6D79229D692DF006EDCAE /* ContentView.swift in Sources */,
 				B720A13F29D9A4EE00B1E88E /* ExpenseListViewModel.swift in Sources */,
 				B720A13A29D9A29A00B1E88E /* NetworkError.swift in Sources */,

@@ -15,10 +15,11 @@ class ExpenseListViewModel: ObservableObject {
     @Published var expenses = Expenses()
     @Published var errorMessage = ""
     @Published var isShowAlert = false
+    var selectedExpense: ExpenseElement?
     
     init() {
         loadTags()
-        loadExpenses()
+        //loadExpenses()
     }
     
 
@@ -39,7 +40,7 @@ class ExpenseListViewModel: ObservableObject {
         }
     }
     
-    private func loadExpenses() {
+    func loadExpenses() {
         httpClient.get(url: K.API.expenses, includeBearerToken: true) { [weak self] (result: Result<Expenses, Error>) in
             switch result {
             case .success(let response):

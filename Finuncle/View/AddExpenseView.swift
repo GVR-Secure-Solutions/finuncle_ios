@@ -16,6 +16,8 @@ struct AddExpenseView: View {
     @State var isPresentTagsScreen = false
     @State private var contentHeight: CGFloat = .zero
     
+    @Environment(\.dismiss) private var dismiss
+    
     //MARK: Body
     var body: some View {
         VStack(alignment: .leading, spacing: 20) {
@@ -68,13 +70,18 @@ struct AddExpenseView: View {
         .navigationBarTitleDisplayMode(.inline)
         .toolbar {
             Button {
-                
+                viewModel.hitAddExpense()
             } label: {
                 Text("Save")
             }
             .padding()
             
         }
+        .onChange(of: viewModel.expenseAdded, perform: { newValue in
+            if newValue == true {
+                dismiss()
+            }
+        })
         .sheet(isPresented: $isPresentTagsScreen) {
             TagsListView(tags: $viewModel.tagsList, searchText: $viewModel.searchText)
                 .onAppear {

@@ -13,6 +13,7 @@ struct ExpenseListView: View {
     @StateObject private var viewModel = ExpenseListViewModel()
     @State var isShowEditScreen = false
     
+    
     func deleteItems(at offsets: IndexSet) {
         //order.items.remove(atOffsets: offsets)
     }
@@ -37,25 +38,32 @@ struct ExpenseListView: View {
                             .fontWeight(.bold)
                         
                     }
-                    
-                }
-                .swipeActions {
-                    
-                    Button(role: .destructive) {
-                        print("Deleting conversation")
-                    } label: {
-                        Label("Delete", systemImage: "trash.fill")
+                    .swipeActions {
+                        
+                        Button(role: .destructive) {
+                            print("Deleting conversation")
+                        } label: {
+                            Label("Delete", systemImage: "trash.fill")
+                        }
+                        
+                        Button {
+                            viewModel.selectedExpense = expense
+                            defer {
+                                isShowEditScreen.toggle()
+                            }
+                        } label: {
+                            Image(systemName: "square.and.pencil")
+                        }
+                        .tint(.indigo)
+                        
                     }
-                    
-                    Button {
-                        isShowEditScreen.toggle()
-                    } label: {
-                        Image(systemName: "square.and.pencil")
-                    }
-                    .tint(.indigo)
                     
                 }
                 
+                
+            }
+            .task {
+                viewModel.loadExpenses()
             }
             .navigationTitle("Finuncle")
             .toolbar {
@@ -64,7 +72,9 @@ struct ExpenseListView: View {
                 }
             }
             .sheet(isPresented: $isShowEditScreen) {
-                EditExpenseView()
+                if let selectedExpense = viewModel.selectedExpense {
+                    EditExpenseView(expense: selectedExpense)
+                }
             }
             
             
